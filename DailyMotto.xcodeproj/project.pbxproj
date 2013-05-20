@@ -1,0 +1,312 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		18893CBC174A306400D3FE8E /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 18893CBB174A306400D3FE8E /* UIKit.framework */; };
+		18893CBE174A306400D3FE8E /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 18893CBD174A306400D3FE8E /* Foundation.framework */; };
+		18893CC0174A306400D3FE8E /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 18893CBF174A306400D3FE8E /* CoreGraphics.framework */; };
+		18893CC6174A306400D3FE8E /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 18893CC4174A306400D3FE8E /* InfoPlist.strings */; };
+		18893CC8174A306500D3FE8E /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 18893CC7174A306500D3FE8E /* main.m */; };
+		18893CCC174A306500D3FE8E /* SCAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 18893CCB174A306500D3FE8E /* SCAppDelegate.m */; };
+		18893CCE174A306500D3FE8E /* Default.png in Resources */ = {isa = PBXBuildFile; fileRef = 18893CCD174A306500D3FE8E /* Default.png */; };
+		18893CD0174A306500D3FE8E /* Default@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 18893CCF174A306500D3FE8E /* Default@2x.png */; };
+		18893CD2174A306500D3FE8E /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 18893CD1174A306500D3FE8E /* Default-568h@2x.png */; };
+		18893CD5174A306500D3FE8E /* MainStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 18893CD3174A306500D3FE8E /* MainStoryboard.storyboard */; };
+		18893CD8174A306500D3FE8E /* SCMasterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 18893CD7174A306500D3FE8E /* SCMasterViewController.m */; };
+		18893CDB174A306500D3FE8E /* SCDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 18893CDA174A306500D3FE8E /* SCDetailViewController.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		18893CB8174A306400D3FE8E /* DailyMotto.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DailyMotto.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		18893CBB174A306400D3FE8E /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
+		18893CBD174A306400D3FE8E /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		18893CBF174A306400D3FE8E /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
+		18893CC3174A306400D3FE8E /* DailyMotto-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "DailyMotto-Info.plist"; sourceTree = "<group>"; };
+		18893CC5174A306400D3FE8E /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		18893CC7174A306500D3FE8E /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		18893CC9174A306500D3FE8E /* DailyMotto-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "DailyMotto-Prefix.pch"; sourceTree = "<group>"; };
+		18893CCA174A306500D3FE8E /* SCAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SCAppDelegate.h; sourceTree = "<group>"; };
+		18893CCB174A306500D3FE8E /* SCAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SCAppDelegate.m; sourceTree = "<group>"; };
+		18893CCD174A306500D3FE8E /* Default.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Default.png; sourceTree = "<group>"; };
+		18893CCF174A306500D3FE8E /* Default@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default@2x.png"; sourceTree = "<group>"; };
+		18893CD1174A306500D3FE8E /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
+		18893CD4174A306500D3FE8E /* en */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = en; path = en.lproj/MainStoryboard.storyboard; sourceTree = "<group>"; };
+		18893CD6174A306500D3FE8E /* SCMasterViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SCMasterViewController.h; sourceTree = "<group>"; };
+		18893CD7174A306500D3FE8E /* SCMasterViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SCMasterViewController.m; sourceTree = "<group>"; };
+		18893CD9174A306500D3FE8E /* SCDetailViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SCDetailViewController.h; sourceTree = "<group>"; };
+		18893CDA174A306500D3FE8E /* SCDetailViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SCDetailViewController.m; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		18893CB5174A306400D3FE8E /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				18893CBC174A306400D3FE8E /* UIKit.framework in Frameworks */,
+				18893CBE174A306400D3FE8E /* Foundation.framework in Frameworks */,
+				18893CC0174A306400D3FE8E /* CoreGraphics.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		18893CAF174A306400D3FE8E = {
+			isa = PBXGroup;
+			children = (
+				18893CC1174A306400D3FE8E /* DailyMotto */,
+				18893CBA174A306400D3FE8E /* Frameworks */,
+				18893CB9174A306400D3FE8E /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		18893CB9174A306400D3FE8E /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				18893CB8174A306400D3FE8E /* DailyMotto.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		18893CBA174A306400D3FE8E /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				18893CBB174A306400D3FE8E /* UIKit.framework */,
+				18893CBD174A306400D3FE8E /* Foundation.framework */,
+				18893CBF174A306400D3FE8E /* CoreGraphics.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		18893CC1174A306400D3FE8E /* DailyMotto */ = {
+			isa = PBXGroup;
+			children = (
+				18893CCA174A306500D3FE8E /* SCAppDelegate.h */,
+				18893CCB174A306500D3FE8E /* SCAppDelegate.m */,
+				18893CD3174A306500D3FE8E /* MainStoryboard.storyboard */,
+				18893CD6174A306500D3FE8E /* SCMasterViewController.h */,
+				18893CD7174A306500D3FE8E /* SCMasterViewController.m */,
+				18893CD9174A306500D3FE8E /* SCDetailViewController.h */,
+				18893CDA174A306500D3FE8E /* SCDetailViewController.m */,
+				18893CC2174A306400D3FE8E /* Supporting Files */,
+			);
+			path = DailyMotto;
+			sourceTree = "<group>";
+		};
+		18893CC2174A306400D3FE8E /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				18893CC3174A306400D3FE8E /* DailyMotto-Info.plist */,
+				18893CC4174A306400D3FE8E /* InfoPlist.strings */,
+				18893CC7174A306500D3FE8E /* main.m */,
+				18893CC9174A306500D3FE8E /* DailyMotto-Prefix.pch */,
+				18893CCD174A306500D3FE8E /* Default.png */,
+				18893CCF174A306500D3FE8E /* Default@2x.png */,
+				18893CD1174A306500D3FE8E /* Default-568h@2x.png */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		18893CB7174A306400D3FE8E /* DailyMotto */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 18893CDE174A306500D3FE8E /* Build configuration list for PBXNativeTarget "DailyMotto" */;
+			buildPhases = (
+				18893CB4174A306400D3FE8E /* Sources */,
+				18893CB5174A306400D3FE8E /* Frameworks */,
+				18893CB6174A306400D3FE8E /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = DailyMotto;
+			productName = DailyMotto;
+			productReference = 18893CB8174A306400D3FE8E /* DailyMotto.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		18893CB0174A306400D3FE8E /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				CLASSPREFIX = SC;
+				LastUpgradeCheck = 0460;
+				ORGANIZATIONNAME = Galiumsoft;
+			};
+			buildConfigurationList = 18893CB3174A306400D3FE8E /* Build configuration list for PBXProject "DailyMotto" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = 18893CAF174A306400D3FE8E;
+			productRefGroup = 18893CB9174A306400D3FE8E /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				18893CB7174A306400D3FE8E /* DailyMotto */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		18893CB6174A306400D3FE8E /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				18893CC6174A306400D3FE8E /* InfoPlist.strings in Resources */,
+				18893CCE174A306500D3FE8E /* Default.png in Resources */,
+				18893CD0174A306500D3FE8E /* Default@2x.png in Resources */,
+				18893CD2174A306500D3FE8E /* Default-568h@2x.png in Resources */,
+				18893CD5174A306500D3FE8E /* MainStoryboard.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		18893CB4174A306400D3FE8E /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				18893CC8174A306500D3FE8E /* main.m in Sources */,
+				18893CCC174A306500D3FE8E /* SCAppDelegate.m in Sources */,
+				18893CD8174A306500D3FE8E /* SCMasterViewController.m in Sources */,
+				18893CDB174A306500D3FE8E /* SCDetailViewController.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		18893CC4174A306400D3FE8E /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				18893CC5174A306400D3FE8E /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+		18893CD3174A306500D3FE8E /* MainStoryboard.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				18893CD4174A306500D3FE8E /* en */,
+			);
+			name = MainStoryboard.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		18893CDC174A306500D3FE8E /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 6.1;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+			};
+			name = Debug;
+		};
+		18893CDD174A306500D3FE8E /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 6.1;
+				OTHER_CFLAGS = "-DNS_BLOCK_ASSERTIONS=1";
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		18893CDF174A306500D3FE8E /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "DailyMotto/DailyMotto-Prefix.pch";
+				INFOPLIST_FILE = "DailyMotto/DailyMotto-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Debug;
+		};
+		18893CE0174A306500D3FE8E /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "DailyMotto/DailyMotto-Prefix.pch";
+				INFOPLIST_FILE = "DailyMotto/DailyMotto-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		18893CB3174A306400D3FE8E /* Build configuration list for PBXProject "DailyMotto" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				18893CDC174A306500D3FE8E /* Debug */,
+				18893CDD174A306500D3FE8E /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		18893CDE174A306500D3FE8E /* Build configuration list for PBXNativeTarget "DailyMotto" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				18893CDF174A306500D3FE8E /* Debug */,
+				18893CE0174A306500D3FE8E /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 18893CB0174A306400D3FE8E /* Project object */;
+}
