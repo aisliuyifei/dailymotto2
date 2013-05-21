@@ -11,4 +11,7 @@
 #ifdef __OBJC__
     #import <UIKit/UIKit.h>
     #import <Foundation/Foundation.h>
+    #import "UIImage+iPhone5.h"
+    #import <QuartzCore/QuartzCore.h>
+
 #endif

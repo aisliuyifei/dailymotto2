@@ -7,9 +7,24 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "MobClick.h"
+#import "UMFeedback.h"
+#import "UMSocialData.h"
+#import "UMSocialControllerService.h"
+#import "WXApi.h"
+#import "DDMenuController.h"
+#define SCLocale(x,...) NSLocalizedString(x, nil)
 
-@interface SCAppDelegate : UIResponder <UIApplicationDelegate>
+@class ViewController;
+
+@interface SCAppDelegate : UIResponder <UIApplicationDelegate,WXApiDelegate>
 
 @property (strong, nonatomic) UIWindow *window;
+
+@property (strong, nonatomic) ViewController *viewController;
+@property (strong, nonatomic) DDMenuController *menuController;
+@property (strong, nonatomic) UIStoryboard *storyboard;
+
+-(NSString*)dbPath;
 
 @end
