@@ -7,8 +7,9 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "AddViewController.h"
 
-@interface SCFrameRollerViewController : UIViewController{
+@interface SCFrameRollerViewController : AddViewController{
     IBOutlet UIScrollView *_scorllView;
     NSMutableArray *imageViews;
     UIImageView *indicatorView;

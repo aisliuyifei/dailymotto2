@@ -38,6 +38,7 @@
     
     [self.window makeKeyAndVisible];
     [self setupUmeng];
+    [self setupYoumi];
     [WXApi registerApp:@"wx99d07ed906cd47b1"];
     [ADVThemeManager customizeAppAppearance];
     if (![[NSUserDefaults standardUserDefaults] valueForKey:kFrameIndex]) {
@@ -55,15 +56,24 @@
     NSDictionary *dictionary = [NSDictionary dictionaryWithObjectsAndKeys:@"2661882060",UMShareToSina,nil];
     [UMSocialConfig setFollowWeiboUids:dictionary];
     [UMSocialControllerService defaultControllerService].socialData.extConfig.wxMessageType = UMSocialWXMessageTypeImage;
-    NSUserDefaults *prefs = [NSUserDefaults standardUserDefaults];
-    NSInteger launchCount = [prefs integerForKey:kLaunchCount];
-    launchCount++;
-    [prefs setInteger:launchCount  forKey:kLaunchCount];
-    if ([[MobClick getConfigParams:@"RateAlert"] intValue]==1) {
-        if ( launchCount!=0 && (launchCount%4==0))
-            [self rateApp];
-    }
+//    NSUserDefaults *prefs = [NSUserDefaults standardUserDefaults];
+//    NSInteger launchCount = [prefs integerForKey:kLaunchCount];
+//    launchCount++;
+//    [prefs setInteger:launchCount  forKey:kLaunchCount];
+//    if ([[MobClick getConfigParams:@"RateAlert"] intValue]==1) {
+//        if ( launchCount!=0 && (launchCount%4==0))
+//            [self rateApp];
+//    }
 
+}
+
+-(void)setupYoumi{
+    [YouMiConfig launchWithAppID:YOUMI_ID appSecret:YOUMI_KEY];
+    [YouMiPointsManager enable];
+    [YouMiConfig setUseInAppStore:YES];
+    [YouMiSpot requestSpotADs:YES];
+    [YouMiConfig setIsTesting:NO];
+    [YouMiConfig setShouldGetLocation:NO];
 }
 - (void)createEditableCopyOfDatabaseIfNeeded {
     // First, test for existence.

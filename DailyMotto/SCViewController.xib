@@ -425,6 +425,7 @@
 					</dictionary>
 					<dictionary class="NSMutableDictionary" key="outlets">
 						<string key="buttonInfo">UIButton</string>
+						<string key="frameView">UIImageView</string>
 						<string key="labelDate">FXLabel</string>
 						<string key="labelTest">FXLabel</string>
 						<string key="labelTitle">FXLabel</string>
@@ -435,6 +436,10 @@
 						<object class="IBToOneOutletInfo" key="buttonInfo">
 							<string key="name">buttonInfo</string>
 							<string key="candidateClassName">UIButton</string>
+						</object>
+						<object class="IBToOneOutletInfo" key="frameView">
+							<string key="name">frameView</string>
+							<string key="candidateClassName">UIImageView</string>
 						</object>
 						<object class="IBToOneOutletInfo" key="labelDate">
 							<string key="name">labelDate</string>

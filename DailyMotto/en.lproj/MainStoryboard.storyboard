@@ -116,6 +116,111 @@
             </objects>
             <point key="canvasLocation" x="375" y="1481"/>
         </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="pyS-LY-9pr">
+            <objects>
+                <navigationController storyboardIdentifier="navPointInfoViewController" definesPresentationContext="YES" id="fev-tw-H88" sceneMemberID="viewController">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="Zqe-we-4Jh">
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="fPX-Bo-INi" kind="relationship" relationship="rootViewController" id="AwX-SG-BPr"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="y08-i2-zyQ" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="29" y="2149"/>
+        </scene>
+        <!--Point Info View Controller-->
+        <scene sceneID="0gP-eK-bzP">
+            <objects>
+                <viewController id="fPX-Bo-INi" customClass="SCPointInfoViewController" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="vGf-P4-Nxv">
+                        <rect key="frame" x="0.0" y="64" width="320" height="504"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="积分获取规则：" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="hMe-mY-65k">
+                                <rect key="frame" x="20" y="20" width="134" height="23"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" name="STHeitiSC-Medium" family="Heiti SC" pointSize="19"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="积分消耗规则：" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="Ewg-h5-qb4">
+                                <rect key="frame" x="20" y="172" width="134" height="23"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" name="STHeitiSC-Medium" family="Heiti SC" pointSize="19"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="当前积分：" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="MjS-DC-nYO">
+                                <rect key="frame" x="20" y="309" width="96" height="23"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" name="STHeitiSC-Medium" family="Heiti SC" pointSize="19"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="1、每日首次登陆查看金句，获取10个正能量。" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="oSL-CQ-Wso">
+                                <rect key="frame" x="20" y="51" width="294" height="41"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="16"/>
+                                <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="1、同一天内每更换一次金句，消耗10点正能量。" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="FUI-ne-oLw">
+                                <rect key="frame" x="20" y="203" width="294" height="41"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="16"/>
+                                <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="c0B-9W-sAf">
+                                <rect key="frame" x="127" y="301" width="168" height="33"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="16"/>
+                                <color key="textColor" red="0.16016429730000001" green="0.65155796659999998" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="2、每更换一次边框效果消耗1点正能量。" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="EvY-eV-oR9">
+                                <rect key="frame" x="20" y="252" width="294" height="41"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="16"/>
+                                <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="2、完成广告提示的任务，获取对应正能量点数。" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="Tja-37-tNz">
+                                <rect key="frame" x="20" y="100" width="294" height="56"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="16"/>
+                                <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="Evb-nK-hq4">
+                                <rect key="frame" x="201" y="130" width="99" height="33"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="18"/>
+                                <state key="normal" title="马上行动" backgroundImage="button-blue.png">
+                                    <color key="titleColor" red="0.95037291140000002" green="0.93953615130000001" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <state key="highlighted">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="buttonClicked:" destination="3uL-wo-7jQ" eventType="touchUpInside" id="5uH-Fp-Mnz"/>
+                                    <action selector="buttonClicked:" destination="fPX-Bo-INi" eventType="touchUpInside" id="ABq-jK-xnE"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="mTT-X1-WWq"/>
+                    <connections>
+                        <outlet property="labelPoints" destination="c0B-9W-sAf" id="3qt-NL-w7a"/>
+                        <outlet property="view" destination="vGf-P4-Nxv" id="E39-24-DAj"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="etW-8a-1Cx" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="461" y="2149"/>
+        </scene>
         <!--View Controller-->
         <scene sceneID="m2a-hy-h3Q">
             <objects>
@@ -273,7 +378,7 @@
                 <relationship kind="action" name="buttonClicked:"/>
             </relationships>
         </class>
-        <class className="SCFrameRollerViewController" superclassName="UIViewController">
+        <class className="SCFrameRollerViewController" superclassName="AddViewController">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/SCFrameRollerViewController.h"/>
             <relationships>
                 <relationship kind="outlet" name="_scorllView" candidateClass="UIScrollView"/>
@@ -290,6 +395,13 @@
             <relationships>
                 <relationship kind="outlet" name="imgIcon" candidateClass="UIImageView"/>
                 <relationship kind="outlet" name="titleLabel" candidateClass="UILabel"/>
+            </relationships>
+        </class>
+        <class className="SCPointInfoViewController" superclassName="AddViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/SCPointInfoViewController.h"/>
+            <relationships>
+                <relationship kind="action" name="buttonClicked:"/>
+                <relationship kind="outlet" name="labelPoints" candidateClass="UILabel"/>
             </relationships>
         </class>
         <class className="ViewController" superclassName="AddViewController">

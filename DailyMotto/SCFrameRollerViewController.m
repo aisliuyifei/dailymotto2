@@ -9,7 +9,9 @@
 #import "SCFrameRollerViewController.h"
 
 @interface SCFrameRollerViewController ()
-
+{
+    int currentSelectedIndex;
+}
 @end
 
 @implementation SCFrameRollerViewController
@@ -45,10 +47,37 @@
 -(void)taped:(UITapGestureRecognizer *)tapedGestureRecognizer{
     NSLog(@"taped");
     int index = [tapedGestureRecognizer view].tag;
-    [[NSUserDefaults standardUserDefaults] setValue:[NSNumber numberWithInt:index] forKey:kFrameIndex];
-    [self updateIndicator];
+    currentSelectedIndex = index;
+    if ([[[NSUserDefaults standardUserDefaults] valueForKey:kFrameIndex] intValue]!=index) {
+
+        if ([YouMiPointsManager pointsRemained]>=1) {
+            NSString *msg = [NSString stringWithFormat:@"更换边框需需要消耗1点正能量，\n您当前剩余积分：%d正能量\n是否确认继续？",[YouMiPointsManager pointsRemained]];
+            UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"积分消耗" message:msg delegate:self cancelButtonTitle:@"不了" otherButtonTitles:@"确认", nil];
+            [alert show];
+        }else{
+            UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"积分不够" message:@"更换边框需要消耗1点正能量,您当前正能量点数不太够哦。" delegate:self cancelButtonTitle:@"知道了" otherButtonTitles:nil];
+            [alert show];
+        }
+    }
 }
 
+-(void)alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex{
+    if (buttonIndex==1) {
+        [YouMiPointsManager spendPoints:1];
+        [[NSUserDefaults standardUserDefaults] setValue:[NSNumber numberWithInt:currentSelectedIndex] forKey:kFrameIndex];
+        [self updateIndicator];
+    }
+    if ([YouMiPointsManager pointsRemained]<1 &&buttonIndex==0) {
+        [YouMiSpot showSpotDismiss:^{
+        }];
+    }
+}
+
+-(void)viewWillAppear:(BOOL)animated{
+
+    [super viewWillAppear:animated];
+    [_scorllView setFrame:CGRectMake(_scorllView.frame.origin.x, _scorllView.frame.origin.y, _scorllView.frame.size.width, _scorllView.frame.size.height-50)];
+}
 
 -(void) addCurrentSelectedIndicator{
     indicatorView = [[UIImageView alloc] initWithFrame:CGRectMake(0, 0, 80, 80)];

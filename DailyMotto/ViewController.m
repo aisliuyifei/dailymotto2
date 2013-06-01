@@ -102,6 +102,17 @@
 }
 
 -(void)viewWillAppear:(BOOL)animated{
+    NSDate * date = [NSDate date];
+    NSDateFormatter *formatter = [[NSDateFormatter alloc] init];
+    
+    [formatter setDateFormat:(@"yyyy-MM-dd")];
+    NSMutableString *dateStr = [NSMutableString stringWithString: [formatter stringFromDate:date]];
+    if (![[NSUserDefaults standardUserDefaults] valueForKey:dateStr]) {
+        [YouMiPointsManager rewardPoints:10];
+        UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"积分奖励" message:@"今日首次获取金句，奖励10点正能量" delegate:nil cancelButtonTitle:@"知道了" otherButtonTitles: nil];
+        [alert show];
+    }
+    
    [segmentControl setSelectedSegmentIndex:[[[NSUserDefaults standardUserDefaults] valueForKey:@"simpleOrTrandition"] intValue]];
     [self updateMottoWithStr: [self getFirstMotto]];
 
@@ -109,11 +120,7 @@
     [labelTest adjustsFontSizeToFitWidth];
     [labelTest setNeedsDisplay];
     
-    NSDate * date = [NSDate date];
-    NSDateFormatter *formatter = [[NSDateFormatter alloc] init];
-    
-    [formatter setDateFormat:(@"yyyy.MM.dd")];
-    NSMutableString *dateStr = [NSMutableString stringWithString: [formatter stringFromDate:date]];
+
     labelDate.font =  [UIFont fontWithName:@"KaiTi_GB2312" size:18];
     [labelDate setText:dateStr];
     [super viewWillAppear:animated];
@@ -138,6 +145,10 @@
     
     [formatter setDateFormat:(@"yyyy-MM-dd")];
     NSMutableString *ds = [NSMutableString stringWithString: [formatter stringFromDate:date]];
+    
+    if (![[NSUserDefaults standardUserDefaults] valueForKey:ds]) {
+        [[NSUserDefaults standardUserDefaults] setValue:[NSNumber numberWithBool:YES] forKey:ds];
+    }
     
     NSString *tmpStr = [NSString stringWithFormat:@"SELECT \"my_motto_dailies\".* FROM \"my_motto_dailies\" WHERE DATE(created_at)= '%@'",ds]; 
     FMResultSet *s_today = [db executeQuery: tmpStr];
@@ -348,8 +359,31 @@
 }
 
 -(IBAction)buttonResetClicked:(id)sender{
-    [self clearTodaysMotto];
-    [self updateMottoWithStr:[self getFirstMotto]];
+    if ([YouMiPointsManager pointsRemained]>=10) {
+        NSString *msg = [NSString stringWithFormat:@"更换金句需需要消耗10点正能量，\n您当前剩余积分：%d正能量\n是否确认继续？",[YouMiPointsManager pointsRemained]];
+        UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"积分消耗" message:msg delegate:self cancelButtonTitle:@"不了" otherButtonTitles:@"确认", nil];
+        [alert show];
+    }else{
+        UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"积分不够" message:@"更换金句需要消耗10点正能量,您当前正能量点数不足。" delegate:self cancelButtonTitle:@"知道了" otherButtonTitles:nil];
+        [alert show];
+    }
+   
+}
+
+-(void)alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex{
+    if (buttonIndex==1) {
+        [YouMiSpot showSpotDismiss:^{
+            if ([YouMiPointsManager pointsRemained]>=10) {
+                [YouMiPointsManager spendPoints:10];
+                [self clearTodaysMotto];
+                [self updateMottoWithStr:[self getFirstMotto]];
+            }
+        }];
+    }
+    if ([YouMiPointsManager pointsRemained]<10 &&buttonIndex==0) {
+        [YouMiSpot showSpotDismiss:^{
+        }];
+    }
 }
 
 #pragma mark - UMSocialUIDelegate

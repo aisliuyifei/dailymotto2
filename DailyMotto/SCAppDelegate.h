@@ -20,6 +20,11 @@
 #define kLaunchCount @"launchCount"
 #define APP_STORE_APP_ID @"526349543"
 
+#define YOUMI_ID @"d0bd8a2f1fe82032"
+#define YOUMI_KEY @"b5ce95be5322ca26"
+#import "YouMiConfig.h"
+#import "YouMiSpot.h"
+#import "YouMiPointsManager.h"
 @class ViewController;
 
 @interface SCAppDelegate : UIResponder <UIApplicationDelegate,WXApiDelegate>

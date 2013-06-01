@@ -34,20 +34,36 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(pointsGotted:) name:kYouMiPointsManagerRecivedPointsNotification object:nil];
 
     [ADVThemeManager customizeTableView:self.tableView];
 }
 
 - (void)viewDidUnload {
     [super viewDidUnload];
+    [[NSNotificationCenter defaultCenter] removeObserver:self];
     self.tableView = nil;
 }
 
+-(void)viewWillAppear:(BOOL)animated{
+    [super viewWillAppear:animated];
+    [_tableView reloadData];
+}
+
+- (void)pointsGotted:(NSNotification *)notification {
+    NSDictionary *dict = [notification userInfo];
+    NSNumber *freshPoints = [dict objectForKey:kYouMiPointsManagerFreshPointsKey];
+    
+    // 这里的积分不应该拿来使用, 只是用于告诉一下用户, 可以通过 [YouMiPointsManager spendPoints:]来使用积分
+    UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"通知" message:[NSString stringWithFormat:@"获得%@正能量", freshPoints] delegate:nil cancelButtonTitle:@"好的" otherButtonTitles:nil];
+    [alert show];
+    [_tableView reloadData];
+}
 
 #pragma mark - UITableViewDataSource
 
 - (NSInteger)tableView:(UITableView*)tableView numberOfRowsInSection:(NSInteger)section {
-    return 3;
+    return 4;
     if ([[[NSUserDefaults standardUserDefaults] valueForKey:@"remove_ads"] boolValue]==YES) {
         return 6;
     }
@@ -79,20 +95,11 @@
             cell.titleLabel.text = SCLocale(@"边框切换");
             break;
         case 3:
-            cell.imgIcon.image = [UIImage imageNamed:@"alert.png"];
-            cell.titleLabel.text = SCLocale(@"Notification");
-            break;
-        case 4:
-            cell.imgIcon.image = [UIImage imageNamed:@"chart.png"];
-            cell.titleLabel.text = SCLocale(@"Chart");
-            break;
-        case 5:
-            cell.imgIcon.image = [UIImage imageNamed:@"profile.png"];
-            cell.titleLabel.text = SCLocale(@"Feedback");
-            break;
-        case 6:
             cell.imgIcon.image = [UIImage imageNamed:@"cart.png"];
-            cell.titleLabel.text = SCLocale(@"Remove ADs");
+            
+            cell.titleLabel.text = [NSString stringWithFormat:@"%@: %d正能量",SCLocale(@"我的积分"), [YouMiPointsManager pointsRemained]];
+            
+            break;
         default:
             break;
     }
@@ -131,17 +138,11 @@
         case 2:
             controller = [delegate.storyboard instantiateViewControllerWithIdentifier:@"navFrameRollerController"];
             break;
-            
-//        case 2:
-//            controller = [delegate.storyboard instantiateViewControllerWithIdentifier:@"navExcisesViewController"];
-//            break;
-//        case 3:
-//            controller = [delegate.storyboard instantiateViewControllerWithIdentifier:@"navSettingViewController"];
-//            break;
-//
-//        default:
-//            controller = [delegate.storyboard instantiateViewControllerWithIdentifier:@"navController"];
-//            break;
+        case 3:
+            controller = [delegate.storyboard instantiateViewControllerWithIdentifier:@"navPointInfoViewController"];
+            break;
+        default:
+            break;
     }
     [menuController setRootController:controller animated:YES];
 }
