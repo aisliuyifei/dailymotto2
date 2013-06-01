@@ -14,6 +14,11 @@
 #import "WXApi.h"
 #import "DDMenuController.h"
 #define SCLocale(x,...) NSLocalizedString(x, nil)
+#define kFrameIndex @"kFrameIndex"
+#define kReviewed @"Reviewed"
+#define nFrames 11
+#define kLaunchCount @"launchCount"
+#define APP_STORE_APP_ID @"526349543"
 
 @class ViewController;
 

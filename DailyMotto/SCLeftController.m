@@ -47,7 +47,7 @@
 #pragma mark - UITableViewDataSource
 
 - (NSInteger)tableView:(UITableView*)tableView numberOfRowsInSection:(NSInteger)section {
-    return 2;
+    return 3;
     if ([[[NSUserDefaults standardUserDefaults] valueForKey:@"remove_ads"] boolValue]==YES) {
         return 6;
     }
@@ -75,8 +75,8 @@
             cell.titleLabel.text = SCLocale(@"分享设置");
             break;
         case 2:
-            cell.imgIcon.image = [UIImage imageNamed:@"123.png"];
-            cell.titleLabel.text = SCLocale(@"Workouts");
+            cell.imgIcon.image = [UIImage imageNamed:@"frame.png"];
+            cell.titleLabel.text = SCLocale(@"边框切换");
             break;
         case 3:
             cell.imgIcon.image = [UIImage imageNamed:@"alert.png"];
@@ -118,17 +118,18 @@
     [tableView selectRowAtIndexPath:indexPath animated:YES scrollPosition:UITableViewScrollPositionTop];
     SCAppDelegate *delegate = (SCAppDelegate *)[UIApplication sharedApplication].delegate;
     DDMenuController *menuController = (DDMenuController*)((SCAppDelegate*)[[UIApplication sharedApplication] delegate]).menuController;
-    UIViewController *controller;
+    UINavigationController *controller;
    
     switch (indexPath.row) {
         case 0:
             controller = [delegate.storyboard instantiateViewControllerWithIdentifier:@"navController"];
+            delegate.viewController = [controller.viewControllers objectAtIndex:0];
             break;
         case 1:
             controller = [delegate.storyboard instantiateViewControllerWithIdentifier:@"navSocial"];
             break;
         case 2:
-            controller = [delegate.storyboard instantiateViewControllerWithIdentifier:@"navUserInfoViewController"];
+            controller = [delegate.storyboard instantiateViewControllerWithIdentifier:@"navFrameRollerController"];
             break;
             
 //        case 2:

@@ -76,6 +76,46 @@
             </objects>
             <point key="canvasLocation" x="474" y="757"/>
         </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="qPQ-bn-oSc">
+            <objects>
+                <navigationController storyboardIdentifier="navFrameRollerController" definesPresentationContext="YES" id="Orb-wx-Y4o" sceneMemberID="viewController">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="8xJ-TB-bF8">
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="4ZL-dh-mYd" kind="relationship" relationship="rootViewController" id="XgO-KV-xYr"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="SUy-jP-Ocs" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-103" y="1481"/>
+        </scene>
+        <!--Frame Roller View Controller-->
+        <scene sceneID="aLc-J1-uNn">
+            <objects>
+                <viewController id="4ZL-dh-mYd" customClass="SCFrameRollerViewController" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="VyG-wx-Pyj">
+                        <rect key="frame" x="0.0" y="64" width="320" height="504"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" id="0bD-2D-HRI">
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="504"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                            </scrollView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="c5G-Br-VQT"/>
+                    <connections>
+                        <outlet property="_scorllView" destination="0bD-2D-HRI" id="xKx-Ko-wg9"/>
+                        <outlet property="view" destination="VyG-wx-Pyj" id="gds-BT-WfK"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="cFF-Mw-bcC" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="375" y="1481"/>
+        </scene>
         <!--View Controller-->
         <scene sceneID="m2a-hy-h3Q">
             <objects>
@@ -84,10 +124,6 @@
                         <rect key="frame" x="0.0" y="64" width="320" height="504"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" image="word_frame.png" id="yKL-Ib-3wX">
-                                <rect key="frame" x="0.0" y="0.0" width="320" height="320"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                            </imageView>
                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="" lineBreakMode="tailTruncation" numberOfLines="5" baselineAdjustment="alignBaselines" minimumFontSize="7" id="gNa-IK-fwp" customClass="FXLabel">
                                 <rect key="frame" x="56" y="64" width="206" height="172"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -103,10 +139,14 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <view contentMode="scaleToFill" id="M7F-uB-QWL">
-                                <rect key="frame" x="44" y="45" width="231" height="230"/>
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="320"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                             </view>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" image="frame_000.png" id="yKL-Ib-3wX">
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="320"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
                             <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" id="aVk-Mi-S0Z">
                                 <rect key="frame" x="156" y="322" width="161" height="44"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -139,6 +179,7 @@
                     </view>
                     <navigationItem key="navigationItem" id="GN6-7i-jhB"/>
                     <connections>
+                        <outlet property="frameView" destination="yKL-Ib-3wX" id="rQZ-zH-g6i"/>
                         <outlet property="labelDate" destination="2SQ-1o-PUf" id="lni-Q5-KRR"/>
                         <outlet property="labelTest" destination="gNa-IK-fwp" id="ilo-dp-rNo"/>
                         <outlet property="segmentControl" destination="aVk-Mi-S0Z" id="YGv-JR-eVX"/>
@@ -216,8 +257,8 @@
         <image name="button-blue-pressed.png" width="126" height="42"/>
         <image name="button-blue.png" width="128" height="42"/>
         <image name="excise.png" width="16" height="16"/>
+        <image name="frame_000.png" width="900" height="900"/>
         <image name="stormchaser.png" width="402" height="102"/>
-        <image name="word_frame.png" width="900" height="900"/>
     </resources>
     <classes>
         <class className="AddViewController" superclassName="UIViewController">
@@ -228,6 +269,15 @@
         </class>
         <class className="SCAccountViewController" superclassName="AddViewController">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/SCAccountViewController.h"/>
+            <relationships>
+                <relationship kind="action" name="buttonClicked:"/>
+            </relationships>
+        </class>
+        <class className="SCFrameRollerViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/SCFrameRollerViewController.h"/>
+            <relationships>
+                <relationship kind="outlet" name="_scorllView" candidateClass="UIScrollView"/>
+            </relationships>
         </class>
         <class className="SCLeftController" superclassName="UIViewController">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/SCLeftController.h"/>
@@ -249,6 +299,7 @@
                 <relationship kind="action" name="infoSelected:"/>
                 <relationship kind="action" name="segmentValueChanged:"/>
                 <relationship kind="outlet" name="buttonInfo" candidateClass="UIButton"/>
+                <relationship kind="outlet" name="frameView" candidateClass="UIImageView"/>
                 <relationship kind="outlet" name="labelDate" candidateClass="FXLabel"/>
                 <relationship kind="outlet" name="labelTest" candidateClass="FXLabel"/>
                 <relationship kind="outlet" name="labelTitle" candidateClass="FXLabel"/>

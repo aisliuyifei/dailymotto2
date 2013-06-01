@@ -13,5 +13,6 @@
     #import <Foundation/Foundation.h>
     #import "UIImage+iPhone5.h"
     #import <QuartzCore/QuartzCore.h>
+    #import "SCAppDelegate.h"
 
 #endif

@@ -106,8 +106,8 @@
     [self updateMottoWithStr: [self getFirstMotto]];
 
     labelTest.font = [UIFont fontWithName:@"KaiTi_GB2312" size:27];
-;
-    [labelTest setNeedsDisplay];    
+    [labelTest adjustsFontSizeToFitWidth];
+    [labelTest setNeedsDisplay];
     
     NSDate * date = [NSDate date];
     NSDateFormatter *formatter = [[NSDateFormatter alloc] init];
@@ -117,6 +117,12 @@
     labelDate.font =  [UIFont fontWithName:@"KaiTi_GB2312" size:18];
     [labelDate setText:dateStr];
     [super viewWillAppear:animated];
+    [self updateFrameStyle];
+}
+
+-(void)updateFrameStyle{
+    int index = [[[NSUserDefaults standardUserDefaults] valueForKey:kFrameIndex] intValue];
+    [_frameView setImage:[UIImage imageNamed:[NSString stringWithFormat:@"frame_%03d",index]]];
 }
 
 -(NSString *)getFirstMotto{
@@ -143,7 +149,7 @@
         //显示今日刮刮卡上次刮完的样子
         [scratchViewController loadScratchPaperWithPath:@"scratch_it"];
         [scratchView setFrame:viewScrachContainer.frame];
-        [self.view addSubview:scratchView];
+        [self.view insertSubview:scratchView belowSubview:self.frameView];
 
         return result;
     }
@@ -161,10 +167,8 @@
         [db executeUpdate:[NSString stringWithFormat:@"INSERT INTO \"my_motto_dailies\" (\"created_at\", \"day\", \"motto\", \"updated_at\") VALUES (\"%@\", \"%@\", \"%@\", \"%@\")",dateStr,dateStr,result,dateStr]];
         [db close];
         [scratchView setFrame:viewScrachContainer.frame];
-        [scratchViewController setImageNamed:@"cover.png"];
-
-        [self.view addSubview:scratchView];
-
+        [scratchViewController setImageNamed:@"cover.002.png"];
+        [self.view insertSubview:scratchView belowSubview:self.frameView];
         return result;
     }
     

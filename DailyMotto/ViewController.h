@@ -32,6 +32,8 @@
     UMSocialData *_socialData;
     UMSocialControllerService *_socialController;
 }
+
+@property (nonatomic,strong)IBOutlet UIImageView *frameView;
 -(IBAction)infoSelected:(id)sender;
 
 -(IBAction)segmentValueChanged:(id)sender;
