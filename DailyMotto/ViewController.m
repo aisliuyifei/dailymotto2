@@ -81,7 +81,7 @@
 //    [self presentViewController:shareListController animated:YES completion:nil];
     
     @try {
-        [UMSocialSnsService presentSnsIconSheetView:self appKey:nil shareText:[NSString stringWithFormat:@"我今天的金句是:%@ #每日金句",labelTest.text] shareImage:currentScreen shareToSnsNames:nil delegate:nil];
+        [UMSocialSnsService presentSnsIconSheetView:self appKey:nil shareText:[NSString stringWithFormat:@"我今天的金句是:%@ #每日金句#",labelTest.text] shareImage:currentScreen shareToSnsNames:nil delegate:nil];
     }
     @catch (NSException *exception) {
         
